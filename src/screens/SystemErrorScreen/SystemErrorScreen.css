@@ -1,0 +1,211 @@
+/* ===================================================================
+   MIMO Christmas 2026 – System Error Screen Styles
+   Theme: Luxury Warm Ivory & Christmas Burgundy (1920x1080 Landscape)
+   =================================================================== */
+
+.error-screen-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 35%, #FFFDF8 0%, #F8F3EA 55%, #EFE5D3 100%);
+  border: 1px solid rgba(143, 38, 56, 0.35);
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: clamp(12px, 1.8vh, 24px) clamp(20px, 3vw, 48px);
+  box-sizing: border-box;
+}
+
+/* Background Atmosphere */
+.error-bokeh {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 1;
+}
+
+.error-bokeh-1 {
+  top: -80px;
+  right: 15%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(143, 38, 56, 0.15) 0%, transparent 70%);
+}
+
+.error-bokeh-2 {
+  bottom: -90px;
+  left: 12%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(223, 190, 118, 0.15) 0%, transparent 80%);
+}
+
+/* Central Error Card Panel */
+.error-panel {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: clamp(580px, 46vw, 720px);
+  background: rgba(255, 253, 248, 0.96);
+  border: 1.5px solid rgba(143, 38, 56, 0.45);
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(41, 37, 33, 0.08), 0 0 25px rgba(143, 38, 56, 0.12);
+  padding: clamp(16px, 2.5vh, 28px) clamp(24px, 3.2vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Icon Container */
+.error-icon-badge {
+  width: clamp(68px, 8.5vh, 84px);
+  height: clamp(68px, 8.5vh, 84px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #B2354C 0%, #8F2638 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFDF8;
+  box-shadow: 0 6px 20px rgba(143, 38, 56, 0.35);
+  border: 2px solid #FFFDF8;
+  margin-bottom: clamp(10px, 1.6vh, 16px);
+  animation: pulseError 2s infinite;
+}
+
+@keyframes pulseError {
+  0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(143, 38, 56, 0.35); }
+  50% { transform: scale(1.05); box-shadow: 0 8px 26px rgba(143, 38, 56, 0.55); }
+}
+
+.error-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vh, 2.25rem);
+  font-weight: 800;
+  color: #8F2638;
+  margin-bottom: 4px;
+}
+
+.error-description {
+  font-size: clamp(0.95rem, 1.35vh, 1.1rem);
+  color: #57524C;
+  max-width: 540px;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+  line-height: 1.45;
+}
+
+/* Diagnostic Box */
+.error-diagnostics-box {
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(143, 38, 56, 0.25);
+  padding: clamp(10px, 1.4vh, 14px) clamp(16px, 2vw, 22px);
+  margin-bottom: clamp(16px, 2.2vh, 22px);
+  text-align: left;
+}
+
+.diagnostic-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: clamp(12px, 1.3vh, 13.5px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.diagnostic-item:last-child {
+  border-bottom: none;
+}
+
+.diagnostic-label {
+  color: #847E76;
+  font-weight: 600;
+}
+
+.diagnostic-val {
+  color: #292521;
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.error-actions-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.retry-job-btn {
+  height: clamp(50px, 6vh, 58px);
+  padding: 0 clamp(24px, 2.8vw, 36px);
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #DFBE76 0%, #C69A45 50%, #9A7529 100%);
+  border: 1.5px solid #FFFDF8;
+  color: #174C3A;
+  font-size: clamp(14px, 1.5vh, 16px);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.4);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.retry-job-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(198, 154, 69, 0.55);
+}
+
+.retry-job-btn:active {
+  transform: scale(0.96);
+}
+
+.cancel-home-btn {
+  height: clamp(50px, 6vh, 58px);
+  padding: 0 clamp(20px, 2.2vw, 28px);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(198, 154, 69, 0.35);
+  color: #292521;
+  font-size: clamp(13.5px, 1.4vh, 15px);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.cancel-home-btn:hover {
+  background: #F4ECE0;
+}
+
+.cancel-home-btn:active {
+  transform: scale(0.96);
+}
+
+.call-attendant-link {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #C69A45;
+  font-weight: 700;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

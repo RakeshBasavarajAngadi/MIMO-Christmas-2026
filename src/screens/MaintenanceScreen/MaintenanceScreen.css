@@ -1,0 +1,392 @@
+/* ===================================================================
+   MIMO Christmas 2026 – Maintenance Screen Styles
+   Theme: Luxury Warm Ivory & Champagne Gold (1920x1080 Landscape)
+   =================================================================== */
+
+.maintenance-screen-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 35%, #FFFDF8 0%, #F8F3EA 55%, #EFE5D3 100%);
+  border: 1px solid rgba(198, 154, 69, 0.32);
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.07), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: clamp(12px, 1.8vh, 24px) clamp(20px, 3vw, 48px);
+  box-sizing: border-box;
+}
+
+/* Central Panel */
+.maintenance-panel {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: clamp(660px, 52vw, 840px);
+  background: rgba(255, 253, 248, 0.96);
+  border: 1.5px solid rgba(198, 154, 69, 0.45);
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(41, 37, 33, 0.08), 0 0 25px rgba(198, 154, 69, 0.14);
+  padding: clamp(16px, 2.5vh, 26px) clamp(24px, 3.2vw, 44px);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+}
+
+/* Header */
+.maintenance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(198, 154, 69, 0.25);
+  padding-bottom: clamp(10px, 1.4vh, 14px);
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+}
+
+.maintenance-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.maintenance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #C69A45;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2px;
+}
+
+.maintenance-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.4vh, 1.85rem);
+  font-weight: 800;
+  color: #174C3A;
+}
+
+/* Diagnostic Gauges Grid */
+.diagnostic-gauges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(8px, 1.2vw, 12px);
+  margin-bottom: clamp(14px, 2vh, 20px);
+}
+
+.gauge-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(198, 154, 69, 0.3);
+  border-radius: 16px;
+  padding: clamp(10px, 1.4vh, 14px) 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(41, 37, 33, 0.04);
+}
+
+.gauge-icon {
+  margin-bottom: 6px;
+  color: #174C3A;
+}
+
+.gauge-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #847E76;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.gauge-value {
+  font-size: clamp(14px, 1.6vh, 17px);
+  font-weight: 800;
+  color: #174C3A;
+}
+
+.gauge-status-sub {
+  font-size: 10.5px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Interactive Simulation Scenario Section */
+.maintenance-scenarios-section {
+  background: rgba(23, 76, 58, 0.04);
+  border: 1px solid rgba(198, 154, 69, 0.28);
+  border-radius: 18px;
+  padding: clamp(12px, 1.6vh, 16px) clamp(16px, 2vw, 22px);
+  margin-bottom: clamp(14px, 2vh, 20px);
+}
+
+.scenarios-heading {
+  font-size: clamp(12.5px, 1.35vh, 14px);
+  font-weight: 800;
+  color: #174C3A;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.scenarios-btn-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.scenario-toggle-btn {
+  padding: clamp(9px, 1.2vh, 12px) 12px;
+  border-radius: 12px;
+  background: #FFFDF8;
+  border: 1px solid rgba(198, 154, 69, 0.35);
+  color: #292521;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.scenario-toggle-btn.active-error {
+  background: #8F2638;
+  color: #FFFDF8;
+  border-color: #631422;
+  box-shadow: 0 4px 12px rgba(143, 38, 56, 0.3);
+}
+
+.scenario-toggle-btn.active-online {
+  background: #174C3A;
+  color: #FFFDF8;
+  border-color: #0F3629;
+}
+
+.scenario-toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Diagnostic Progress / Results Section */
+.diagnostic-run-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid rgba(198, 154, 69, 0.35);
+  border-radius: 16px;
+  padding: clamp(10px, 1.4vh, 14px) clamp(14px, 1.8vw, 20px);
+  margin-bottom: clamp(12px, 1.6vh, 18px);
+  box-shadow: 0 4px 16px rgba(41, 37, 33, 0.05);
+  animation: fadeInDiagnostic 0.25s ease-out;
+}
+
+@keyframes fadeInDiagnostic {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diagnostic-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.diagnostic-stage-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diagnostic-stage-text {
+  font-size: clamp(12.5px, 1.35vh, 14px);
+  font-weight: 700;
+  color: #174C3A;
+  letter-spacing: 0.2px;
+}
+
+.diagnostic-stage-text.success {
+  color: #174C3A;
+  font-weight: 800;
+}
+
+.diagnostic-spin-icon {
+  color: #C69A45;
+}
+
+.rotate-active {
+  animation: spinDiagnostic 1s linear infinite;
+}
+
+@keyframes spinDiagnostic {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.diagnostic-percentage {
+  font-size: clamp(13px, 1.4vh, 15px);
+  font-weight: 800;
+  color: #C69A45;
+  font-variant-numeric: tabular-nums;
+}
+
+.diagnostic-progress-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(198, 154, 69, 0.16);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid rgba(198, 154, 69, 0.25);
+}
+
+.diagnostic-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #174C3A 0%, #C69A45 75%, #DFBE76 100%);
+  border-radius: 9999px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(198, 154, 69, 0.4);
+}
+
+.diagnostic-progress-bar.bar-success {
+  background: linear-gradient(90deg, #174C3A 0%, #206F55 60%, #C69A45 100%);
+}
+
+/* Success Card */
+.diagnostic-success-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(198, 154, 69, 0.2);
+  animation: fadeInDiagnostic 0.3s ease-out;
+}
+
+.diagnostic-success-indicator {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(23, 76, 58, 0.12);
+  border: 1.5px solid #174C3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.diagnostic-success-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.diagnostic-success-title {
+  font-size: clamp(13px, 1.4vh, 14.5px);
+  font-weight: 800;
+  color: #174C3A;
+}
+
+.diagnostic-success-sub {
+  font-size: clamp(10.5px, 1.15vh, 11.5px);
+  color: #6B655D;
+  margin-top: 2px;
+}
+
+.diagnostic-rerun-inline-btn {
+  margin-left: auto;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: #174C3A;
+  border: 1px solid #0F3629;
+  color: #FFFDF8;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.diagnostic-rerun-inline-btn:hover {
+  background: #206F55;
+  transform: translateY(-1px);
+}
+
+/* Footer Actions */
+.maintenance-actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.test-print-btn {
+  height: clamp(46px, 5.5vh, 54px);
+  padding: 0 clamp(20px, 2.2vw, 28px);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #C69A45;
+  color: #174C3A;
+  font-size: 13.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.test-print-btn:hover:not(:disabled) {
+  background: #F4ECE0;
+}
+
+.test-print-btn:disabled,
+.btn-disabled {
+  opacity: 0.65;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.exit-maintenance-btn {
+  height: clamp(46px, 5.5vh, 54px);
+  padding: 0 clamp(24px, 2.5vw, 32px);
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #DFBE76 0%, #C69A45 50%, #9A7529 100%);
+  border: 1.5px solid #FFFDF8;
+  color: #174C3A;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.35);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.exit-maintenance-btn:hover {
+  transform: scale(1.02);
+}

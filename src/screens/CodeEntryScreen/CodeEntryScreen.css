@@ -1,0 +1,364 @@
+/* ===================================================================
+   MIMO Christmas 2026 – Code Entry Screen Styles
+   Theme: Luxury Warm Ivory & Champagne Gold (1920x1080 Landscape)
+   =================================================================== */
+
+.code-entry-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 40%, #FFFDF8 0%, #F8F3EA 55%, #EFE5D3 100%);
+  border: 1px solid rgba(198, 154, 69, 0.32);
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.07), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: clamp(12px, 1.8vh, 24px) clamp(20px, 3vw, 48px);
+  box-sizing: border-box;
+}
+
+/* ===================================================================
+   Atmospheric Festive Background Accents (Subtle, Non-Distracting)
+   =================================================================== */
+
+.code-entry-bokeh {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 1;
+}
+
+.code-entry-bokeh-1 {
+  top: -80px;
+  right: 12%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(223, 190, 118, 0.18) 0%, transparent 70%);
+}
+
+.code-entry-bokeh-2 {
+  bottom: -90px;
+  left: 10%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(248, 243, 234, 0.75) 0%, rgba(239, 230, 213, 0.3) 60%, transparent 80%);
+}
+
+.code-entry-watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+  color: #C69A45;
+  z-index: 1;
+}
+
+.code-watermark-left {
+  bottom: 40px;
+  left: 50px;
+  width: 130px;
+  height: 130px;
+}
+
+.code-watermark-right {
+  top: 40px;
+  right: 60px;
+  width: 140px;
+  height: 140px;
+}
+
+/* ===================================================================
+   Circular Back Button (Upper-Left Corner)
+   =================================================================== */
+
+.kiosk-back-btn {
+  position: absolute;
+  top: clamp(14px, 2vh, 24px);
+  left: clamp(16px, 2.2vw, 32px);
+  width: clamp(52px, 6.4vh, 64px);
+  height: clamp(52px, 6.4vh, 64px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFDF8 0%, #DFBE76 45%, #C69A45 75%, #9A7529 100%);
+  border: 2px solid #FFFDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #174C3A;
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.45), 0 2px 6px rgba(41, 37, 33, 0.1);
+  cursor: pointer;
+  z-index: 30;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.kiosk-back-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(198, 154, 69, 0.6);
+}
+
+.kiosk-back-btn:active {
+  transform: scale(0.93);
+}
+
+/* ===================================================================
+   Central Code Entry Panel
+   =================================================================== */
+
+.code-entry-panel {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: clamp(540px, 44vw, 680px);
+  background: rgba(255, 253, 248, 0.95);
+  border: 1.5px solid rgba(198, 154, 69, 0.45);
+  border-radius: 28px;
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.08), 0 0 25px rgba(198, 154, 69, 0.12);
+  padding: clamp(16px, 2.4vh, 28px) clamp(24px, 3.2vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+}
+
+/* Header & Instruction */
+.code-entry-header {
+  text-align: center;
+  margin-bottom: clamp(10px, 1.6vh, 18px);
+}
+
+.code-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(23, 76, 58, 0.07);
+  border: 1px solid rgba(198, 154, 69, 0.35);
+  margin-bottom: 8px;
+}
+
+.code-panel-badge-icon {
+  color: #C69A45;
+}
+
+.code-panel-badge-text {
+  font-size: 11px;
+  font-weight: 800;
+  color: #174C3A;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.code-entry-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vh, 2.25rem);
+  font-weight: 800;
+  color: #174C3A;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #174C3A 20%, #1E5D47 60%, #C69A45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.code-entry-subtitle {
+  font-size: clamp(0.9rem, 1.3vh, 1.05rem);
+  color: #57524C;
+  font-weight: 500;
+}
+
+/* ===================================================================
+   Four Horizontal Code Display Boxes
+   =================================================================== */
+
+.code-boxes-container {
+  display: flex;
+  justify-content: center;
+  gap: clamp(12px, 1.8vw, 22px);
+  margin-bottom: clamp(10px, 1.6vh, 18px);
+  width: 100%;
+}
+
+.code-box {
+  width: clamp(62px, 7vw, 84px);
+  height: clamp(66px, 8vh, 88px);
+  border-radius: 16px;
+  background: #FFFDF8;
+  border: 2px solid rgba(198, 154, 69, 0.4);
+  box-shadow: 0 4px 14px rgba(41, 37, 33, 0.05), inset 0 2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.code-box.filled {
+  border-color: #174C3A;
+  background: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(23, 76, 58, 0.12);
+}
+
+.code-box.active {
+  border-color: #C69A45;
+  box-shadow: 0 0 18px rgba(198, 154, 69, 0.5), inset 0 0 8px rgba(198, 154, 69, 0.1);
+  transform: translateY(-2px);
+}
+
+.code-box-digit {
+  font-size: clamp(2rem, 3.6vh, 2.75rem);
+  font-weight: 800;
+  color: #174C3A;
+  font-family: var(--font-sans);
+  animation: digitPop 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes digitPop {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Active Blinking Cursor for Empty Active Box */
+.code-box-cursor {
+  width: 3px;
+  height: clamp(28px, 3.6vh, 36px);
+  background-color: #C69A45;
+  border-radius: 2px;
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Inline Error Banner */
+.code-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8F2638;
+  font-size: clamp(12.5px, 1.3vh, 14px);
+  font-weight: 700;
+  margin-bottom: clamp(8px, 1.2vh, 14px);
+  animation: shakeError 0.4s ease-in-out;
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* ===================================================================
+   Numeric Keypad (3-Column, 4-Row Grid)
+   =================================================================== */
+
+.numeric-keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.2vh, 14px);
+  width: 100%;
+  max-width: 440px;
+}
+
+/* Common Keypad Button */
+.keypad-btn {
+  height: clamp(52px, 6.4vh, 66px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.keypad-btn:active {
+  transform: scale(0.95);
+}
+
+/* Standard Number Buttons (1-9, 0) */
+.keypad-btn-number {
+  background: #FFFDF8;
+  border: 1.5px solid rgba(198, 154, 69, 0.4);
+  box-shadow: 0 4px 12px rgba(41, 37, 33, 0.05);
+  font-size: clamp(1.5rem, 2.6vh, 2rem);
+  font-weight: 700;
+  color: #174C3A;
+}
+
+.keypad-btn-number:hover {
+  background: #FFFFFF;
+  border-color: #C69A45;
+  box-shadow: 0 6px 16px rgba(198, 154, 69, 0.25);
+}
+
+.keypad-btn-number:active {
+  background: #F4ECE0;
+}
+
+/* Burgundy Backspace Button */
+.keypad-btn-backspace {
+  background: linear-gradient(135deg, #B2354C 0%, #8F2638 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #FFFDF8;
+  box-shadow: 0 4px 14px rgba(143, 38, 56, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: clamp(13px, 1.4vh, 15px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.keypad-btn-backspace:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 6px 18px rgba(143, 38, 56, 0.45);
+}
+
+.keypad-btn-backspace:active {
+  transform: scale(0.95);
+  filter: brightness(0.92);
+}
+
+/* Champagne Gold Confirm Button */
+.keypad-btn-confirm {
+  background: linear-gradient(135deg, #DFBE76 0%, #C69A45 50%, #9A7529 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  color: #174C3A;
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(13.5px, 1.5vh, 16px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.keypad-btn-confirm:hover:not(:disabled) {
+  filter: brightness(1.05);
+  box-shadow: 0 6px 22px rgba(198, 154, 69, 0.6);
+}
+
+.keypad-btn-confirm:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.keypad-btn-confirm:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+  filter: grayscale(25%);
+  box-shadow: none;
+}

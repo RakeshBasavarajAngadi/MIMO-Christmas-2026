@@ -1,0 +1,328 @@
+/* ===================================================================
+   MIMO Christmas 2026 – Summary Screen Styles
+   Theme: Luxury Warm Ivory & Champagne Gold (1920x1080 Landscape)
+   =================================================================== */
+
+.summary-screen-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 50% 35%, #FFFDF8 0%, #F8F3EA 55%, #EFE5D3 100%);
+  border: 1px solid rgba(198, 154, 69, 0.32);
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.07), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: clamp(12px, 1.8vh, 24px) clamp(20px, 3vw, 48px);
+  box-sizing: border-box;
+}
+
+/* Background Atmosphere */
+.summary-bokeh {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(45px);
+  z-index: 1;
+}
+
+.summary-bokeh-1 {
+  top: -80px;
+  right: 15%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(223, 190, 118, 0.2) 0%, transparent 70%);
+}
+
+.summary-bokeh-2 {
+  bottom: -90px;
+  left: 12%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(248, 243, 234, 0.75) 0%, rgba(239, 230, 213, 0.3) 60%, transparent 80%);
+}
+
+/* Central Summary Card Panel */
+.summary-panel {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: clamp(620px, 50vw, 780px);
+  background: rgba(255, 253, 248, 0.96);
+  border: 1.5px solid rgba(198, 154, 69, 0.45);
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(41, 37, 33, 0.08), 0 0 25px rgba(198, 154, 69, 0.14);
+  padding: clamp(16px, 2.5vh, 28px) clamp(24px, 3.2vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  box-sizing: border-box;
+}
+
+/* Header & Success Badge */
+.summary-header {
+  text-align: center;
+  margin-bottom: clamp(10px, 1.6vh, 16px);
+  width: 100%;
+}
+
+.summary-success-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(23, 76, 58, 0.08);
+  border: 1px solid rgba(23, 76, 58, 0.28);
+  margin-bottom: 8px;
+  color: #174C3A;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.summary-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vh, 2.4rem);
+  font-weight: 800;
+  color: #174C3A;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #174C3A 20%, #1E5D47 60%, #C69A45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.summary-customer-line {
+  font-size: clamp(0.95rem, 1.35vh, 1.1rem);
+  color: #57524C;
+  font-weight: 600;
+}
+
+/* Card Mockup Visual Stack */
+.summary-cards-stack {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.4vw, 16px);
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+  width: 100%;
+}
+
+.completed-card-thumb {
+  width: clamp(75px, 8.5vw, 105px);
+  height: clamp(100px, 12vh, 135px);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #FFFDF8 0%, #F5ECE0 100%);
+  border: 1.5px solid #C69A45;
+  box-shadow: 0 8px 20px rgba(41, 37, 33, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.completed-card-thumb:hover {
+  transform: translateY(-4px);
+}
+
+.card-thumb-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-thumb-icon {
+  color: #C69A45;
+}
+
+.card-thumb-page-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: #174C3A;
+}
+
+.doc-page-lines-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px 2px;
+  flex: 1;
+  justify-content: center;
+}
+
+.doc-skeleton-title {
+  width: 55%;
+  height: 4px;
+  background: #174C3A;
+  border-radius: 2px;
+  margin-bottom: 2px;
+}
+
+.doc-skeleton-line {
+  height: 2.5px;
+  background: rgba(198, 154, 69, 0.4);
+  border-radius: 2px;
+}
+
+.card-thumb-footer {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #174C3A;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-top: 1px solid rgba(198, 154, 69, 0.3);
+  padding-top: 4px;
+}
+
+/* Print Job Metrics Details Row */
+.summary-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.2vw, 14px);
+  width: 100%;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+}
+
+.summary-metric-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(198, 154, 69, 0.3);
+  border-radius: var(--radius-md);
+  padding: clamp(8px, 1.2vh, 12px) clamp(10px, 1.2vw, 14px);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(41, 37, 33, 0.04);
+}
+
+.metric-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #847E76;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.metric-value {
+  font-size: clamp(14px, 1.6vh, 16.5px);
+  font-weight: 800;
+  color: #174C3A;
+}
+
+/* Collection Tray Instruction Box (Prominent & Illuminated) */
+.collection-instruction-box {
+  width: 100%;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(23, 76, 58, 0.08) 0%, rgba(198, 154, 69, 0.12) 100%);
+  border: 1.5px solid rgba(198, 154, 69, 0.5);
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.15);
+  padding: clamp(10px, 1.4vh, 16px) clamp(16px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.6vw, 18px);
+  margin-bottom: clamp(14px, 2vh, 20px);
+}
+
+.collection-icon-badge {
+  width: clamp(44px, 5vh, 52px);
+  height: clamp(44px, 5vh, 52px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #174C3A, #0F3629);
+  color: #F3E2B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(23, 76, 58, 0.3);
+  flex-shrink: 0;
+  animation: bounceSlow 2s infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+.collection-text-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.collection-heading {
+  font-size: clamp(14px, 1.6vh, 16px);
+  font-weight: 800;
+  color: #174C3A;
+  margin-bottom: 2px;
+}
+
+.collection-subtext {
+  font-size: clamp(12px, 1.3vh, 13.5px);
+  color: #57524C;
+  font-weight: 500;
+}
+
+/* Footer Actions: Done Button & 10s Countdown */
+.summary-actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+/* 10-Second Countdown Pill */
+.summary-countdown-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(41, 37, 33, 0.05);
+  border: 1px solid rgba(198, 154, 69, 0.3);
+  font-size: clamp(12px, 1.3vh, 13.5px);
+  font-weight: 600;
+  color: #57524C;
+}
+
+.countdown-timer-num {
+  font-weight: 800;
+  color: #8F2638;
+}
+
+/* Done Button */
+.summary-done-btn {
+  height: clamp(52px, 6.2vh, 62px);
+  padding: 0 clamp(28px, 3vw, 42px);
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, #DFBE76 0%, #C69A45 50%, #9A7529 100%);
+  border: 2px solid #FFFDF8;
+  color: #174C3A;
+  font-size: clamp(15px, 1.6vh, 17px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(198, 154, 69, 0.45);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.summary-done-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(198, 154, 69, 0.6);
+}
+
+.summary-done-btn:active {
+  transform: scale(0.96);
+}

@@ -1,0 +1,670 @@
+/* ===================================================================
+   MIMO Christmas 2026 – Home Screen Styles
+   Theme: Luxury Warm Ivory & Champagne Gold (Responsive 1920x1080)
+   =================================================================== */
+
+.home-screen-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  flex: 1;
+  min-height: 0; /* Prevents overflow in flexbox container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: radial-gradient(circle at 65% 35%, #FFFDF8 0%, #F8F3EA 50%, #EFE5D3 100%);
+  border: 1px solid rgba(198, 154, 69, 0.32);
+  box-shadow: 0 16px 45px rgba(41, 37, 33, 0.07), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  padding: clamp(12px, 1.8vh, 24px) clamp(24px, 3.2vw, 54px);
+  box-sizing: border-box;
+}
+
+/* ===================================================================
+   Atmospheric Background Elements: Bokeh, Gold Snowflake Watermarks
+   =================================================================== */
+
+.bokeh-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+  z-index: 1;
+}
+
+.bokeh-orb-1 {
+  top: -60px;
+  right: 18%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(223, 190, 118, 0.2) 0%, transparent 70%);
+}
+
+.bokeh-orb-2 {
+  bottom: -80px;
+  left: 28%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(248, 243, 234, 0.8) 0%, rgba(239, 230, 213, 0.35) 60%, transparent 80%);
+}
+
+.bokeh-orb-3 {
+  top: 25%;
+  left: 5%;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(198, 154, 69, 0.1) 0%, transparent 70%);
+}
+
+/* Elegant Golden Snowflake Watermark Motifs */
+.snowflake-watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.14;
+  color: #C69A45;
+  z-index: 1;
+}
+
+.watermark-1 {
+  top: 40px;
+  left: 36%;
+  width: 120px;
+  height: 120px;
+}
+
+.watermark-2 {
+  bottom: 50px;
+  right: 44%;
+  width: 95px;
+  height: 95px;
+}
+
+/* ===================================================================
+   Corner Evergreens Layer (Strictly Framed without Overlap)
+   =================================================================== */
+
+.corner-evergreens-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.corner-branch {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+/* Top-left branch hugs the top trim strictly and does NOT overlap branding */
+.corner-branch-left {
+  left: 0;
+  width: clamp(160px, 14vw, 240px);
+  height: auto;
+  max-height: 50px;
+}
+
+.corner-branch-right {
+  right: 0;
+  width: clamp(160px, 14vw, 240px);
+  height: auto;
+  max-height: 75px;
+}
+
+/* ===================================================================
+   Snowfall Layer (Gentle, low visual density)
+   =================================================================== */
+
+.snowfall-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.snowflake {
+  position: absolute;
+  top: -15px;
+  border-radius: 50%;
+  animation-name: snowfallDrift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snow-flake {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+}
+
+.gold-speck {
+  background-color: #DFBE76;
+  box-shadow: 0 0 8px rgba(198, 154, 69, 0.8);
+}
+
+@keyframes snowfallDrift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(50vh) translateX(var(--drift));
+  }
+  100% {
+    transform: translateY(calc(100vh + 25px)) translateX(calc(var(--drift) * -0.5));
+  }
+}
+
+/* ===================================================================
+   Christmas Lights Garland (Warm Gold Fairy Lights)
+   =================================================================== */
+
+.christmas-lights-garland {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.lights-wire {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+}
+
+.lights-bulbs-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.light-socket {
+  position: absolute;
+  top: 8px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.light-bulb-base {
+  width: 4px;
+  height: 3px;
+  background-color: #9A7529;
+  border-radius: 2px 2px 0 0;
+}
+
+.light-bulb {
+  width: 9px;
+  height: 13px;
+  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+  animation: warmLightPulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes warmLightPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* ===================================================================
+   Home Stage Main Content (Balanced 2-Column Responsive Grid)
+   =================================================================== */
+
+.home-content-columns {
+  position: relative;
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 1.14fr 0.86fr;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 36px);
+  flex: 1;
+  min-height: 0; /* Crucial for preventing container expansion */
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  max-width: 1740px;
+  margin: 0 auto;
+}
+
+/* LEFT SECTION: Hero Content Column */
+.home-hero-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  padding-left: clamp(4px, 1vw, 20px);
+  padding-top: clamp(6px, 1.2vh, 16px); /* Ample clearance below ceiling branches */
+}
+
+/* MIMO Branding & Logo Presentation */
+.mimo-brand-presentation {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.2vw, 16px);
+  margin-bottom: clamp(6px, 1.2vh, 12px);
+}
+
+.mimo-logo-mark {
+  width: clamp(44px, 4.8vh, 52px);
+  height: clamp(44px, 4.8vh, 52px);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #174C3A 0%, #0F3629 100%);
+  border: 1.5px solid #C69A45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 16px rgba(23, 76, 58, 0.2), 0 0 12px rgba(198, 154, 69, 0.22);
+}
+
+.mimo-logo-monogram {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.4vh, 24px);
+  font-weight: 800;
+  color: #F3E2B8;
+  letter-spacing: 0.5px;
+}
+
+/* Small Badge: MIMO CHRISTMAS 2026 */
+.brand-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(5px, 0.7vh, 7px) clamp(12px, 1.2vw, 16px);
+  border-radius: var(--radius-full);
+  background: rgba(255, 253, 248, 0.95);
+  border: 1px solid rgba(198, 154, 69, 0.45);
+  box-shadow: 0 2px 10px rgba(41, 37, 33, 0.04);
+}
+
+.badge-sparkle-icon {
+  color: #C69A45;
+  animation: sparkleTwinkle 4s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.85; }
+  50% { transform: scale(1.15) rotate(90deg); opacity: 1; }
+}
+
+.badge-text-primary {
+  font-size: clamp(11.5px, 1.2vh, 13px);
+  font-weight: 800;
+  color: #174C3A;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-family: var(--font-sans);
+}
+
+.badge-divider {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background-color: #C69A45;
+}
+
+.badge-text-secondary {
+  font-size: clamp(11px, 1.1vh, 12px);
+  font-weight: 700;
+  color: #C69A45;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+/* Subheading: "Self-Service Printing Kiosk" */
+.kiosk-title-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(4px, 0.8vh, 8px);
+}
+
+.kiosk-title-text {
+  font-size: clamp(0.95rem, 1.2vh, 1.1rem);
+  font-weight: 700;
+  color: #C69A45;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: var(--font-sans);
+}
+
+.kiosk-title-line {
+  width: clamp(30px, 3vw, 42px);
+  height: 2px;
+  background: linear-gradient(90deg, #C69A45 0%, transparent 100%);
+}
+
+/* Main Heading: "Merry Christmas!" (Refined Serif Typography) */
+.home-greeting-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.2vh, 4.6rem);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: clamp(6px, 1.2vh, 12px);
+  background: linear-gradient(135deg, #174C3A 20%, #1E5D47 60%, #C69A45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(41, 37, 33, 0.1));
+}
+
+/* Supporting Text: "Celebrate the season with effortless printing." */
+.home-supporting-text {
+  font-size: clamp(1.05rem, 1.7vh, 1.35rem);
+  font-weight: 400;
+  color: #292521;
+  line-height: 1.38;
+  margin-bottom: clamp(12px, 2vh, 20px);
+  max-width: 580px;
+}
+
+.home-supporting-highlight {
+  color: #174C3A;
+  font-weight: 700;
+  border-bottom: 2px solid #C69A45;
+  padding-bottom: 1px;
+}
+
+/* Three Service Highlights (Guaranteed Full Visibility) */
+.home-feature-chips {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 12px);
+  margin-bottom: clamp(14px, 2.4vh, 26px);
+  flex-wrap: wrap;
+}
+
+.feature-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: clamp(7px, 1vh, 10px) clamp(12px, 1.2vw, 17px);
+  border-radius: var(--radius-full);
+  background: rgba(255, 253, 248, 0.95);
+  border: 1px solid rgba(198, 154, 69, 0.4);
+  color: #292521;
+  font-size: clamp(12px, 1.3vh, 14px);
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(41, 37, 33, 0.04);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.feature-chip:active {
+  transform: scale(0.98);
+}
+
+.feature-chip-icon {
+  color: #C69A45;
+}
+
+/* ===================================================================
+   Slide to Start Interactive Control (Fully Visible, Prominently Placed)
+   =================================================================== */
+
+.slide-to-start-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(6px, 1vh, 10px);
+  width: 100%;
+  max-width: clamp(420px, 35vw, 540px);
+}
+
+/* Track: Champagne gold gradient border, warm ivory background */
+.slide-track {
+  position: relative;
+  width: 100%;
+  height: clamp(64px, 7.8vh, 76px);
+  border-radius: 38px;
+  background: rgba(255, 253, 248, 0.96);
+  border: 2px solid #C69A45;
+  box-shadow: 0 8px 24px rgba(41, 37, 33, 0.07), 0 0 18px rgba(198, 154, 69, 0.22);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  touch-action: none;
+  backdrop-filter: blur(14px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.slide-track:focus-visible {
+  outline: 3px solid #C69A45;
+  outline-offset: 3px;
+}
+
+.slide-track.completed {
+  border-color: #174C3A;
+  box-shadow: 0 0 30px rgba(23, 76, 58, 0.45);
+}
+
+/* Dynamic Active Progress Fill */
+.slide-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(23, 76, 58, 0.12) 0%, rgba(198, 154, 69, 0.35) 60%, rgba(198, 154, 69, 0.8) 100%);
+  border-radius: 38px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Guide Label: Elegant Dark Green Text */
+.slide-label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: clamp(1.1rem, 1.6vh, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  color: #174C3A;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 2;
+  font-family: var(--font-sans);
+  transition: opacity 0.15s ease;
+}
+
+.slide-chevrons {
+  display: flex;
+  align-items: center;
+  color: #C69A45;
+}
+
+.chevron-animate-1 {
+  animation: chevronSweep 1.6s ease-in-out infinite;
+}
+
+.chevron-animate-2 {
+  animation: chevronSweep 1.6s ease-in-out infinite 0.35s;
+}
+
+@keyframes chevronSweep {
+  0%, 100% {
+    opacity: 0.35;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(6px);
+  }
+}
+
+/* Draggable Circular Knob: Metallic Champagne Gold */
+.slide-handle {
+  position: relative;
+  width: clamp(52px, 6.4vh, 62px);
+  height: clamp(52px, 6.4vh, 62px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFFDF8 0%, #DFBE76 40%, #C69A45 70%, #9A7529 100%);
+  box-shadow: 0 4px 16px rgba(198, 154, 69, 0.45), 0 2px 6px rgba(41, 37, 33, 0.12);
+  border: 2px solid #FFFDF8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  z-index: 4;
+  touch-action: none;
+}
+
+.slide-handle:active,
+.slide-handle.dragging {
+  cursor: grabbing;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(198, 154, 69, 0.6), 0 0 22px rgba(223, 190, 118, 0.65);
+}
+
+.slide-handle.success {
+  background: linear-gradient(135deg, #246B52 0%, #174C3A 100%);
+  border-color: #DFBE76;
+  box-shadow: 0 0 22px rgba(23, 76, 58, 0.7);
+}
+
+.handle-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #174C3A;
+  position: relative;
+}
+
+.handle-arrow {
+  color: #174C3A;
+  font-weight: 900;
+}
+
+.handle-sparkle {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  color: #8F2638;
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+.handle-icon-check {
+  color: #FFFDF8;
+  animation: scaleBounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scaleBounce {
+  0% { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Fallback Tap Button */
+.slide-fallback-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  color: #57524C;
+  font-size: clamp(12px, 1.3vh, 14px);
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.slide-fallback-hint:hover,
+.slide-fallback-hint:active {
+  color: #C69A45;
+  transform: translateX(3px);
+}
+
+/* ===================================================================
+   RIGHT SECTION: Christmas Tree Centerpiece (100% Proportional Fit)
+   =================================================================== */
+
+.home-tree-column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0; /* Prevents overflow */
+  width: 100%;
+  overflow: visible;
+}
+
+.festive-tree-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tree-ambient-glow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  width: 85%;
+  height: 85%;
+  max-width: 480px;
+  max-height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(223, 190, 118, 0.25) 0%, rgba(248, 243, 234, 0.45) 45%, transparent 75%);
+  filter: blur(36px);
+  pointer-events: none;
+}
+
+/* The SVG scales dynamically to fit 100% within available vertical & horizontal space */
+.festive-tree-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  overflow: visible;
+  filter: drop-shadow(0 14px 32px rgba(41, 37, 33, 0.12));
+}
+
+.tree-star-master {
+  animation: masterStarTwinkle 3.2s ease-in-out infinite alternate;
+  transform-origin: 310px 160px;
+}
+
+@keyframes masterStarTwinkle {
+  0% {
+    transform: scale(0.97);
+    filter: drop-shadow(0 0 8px #DFBE76);
+  }
+  100% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 22px #F3E2B8);
+  }
+}
